@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="750.0" stylesheets="@../css/estilos.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kinal.mercado.controller.ProductoController">
+   <children>
+      <Label layoutX="30.0" layoutY="20.0" styleClass="titulo" text="Gestión de Productos - QuickMart" />
+      
+      <VBox layoutX="30.0" layoutY="70.0" spacing="10.0">
+         <children>
+            <TextField fx:id="txtCodigo" promptText="Código de Barras" />
+            <TextField fx:id="txtNombre" promptText="Nombre Comercial" />
+            <TextField fx:id="txtCosto" promptText="Precio Costo" />
+            <TextField fx:id="txtVenta" promptText="Precio Venta" />
+            <TextField fx:id="txtCategoria" promptText="Categoría" />
+            <TextField fx:id="txtStock" promptText="Stock" />
+         </children>
+      </VBox>
+      
+      <HBox layoutX="30.0" layoutY="370.0" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+            <Button mnemonicParsing="false" onAction="#actualizar" text="Actualizar" />
+            <Button mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+         </children>
+      </HBox>
+      
+      <TableView fx:id="tblProductos" layoutX="260.0" layoutY="70.0" onMouseClicked="#seleccionarElemento" prefHeight="350.0" prefWidth="460.0">
+        <columns>
+          <TableColumn fx:id="colCodigo" prefWidth="75.0" text="Código" />
+          <TableColumn fx:id="colNombre" prefWidth="100.0" text="Nombre" />
+          <TableColumn fx:id="colCosto" prefWidth="60.0" text="Costo" />
+          <TableColumn fx:id="colVenta" prefWidth="60.0" text="Venta" />
+          <TableColumn fx:id="colCategoria" prefWidth="90.0" text="Categoría" />
+          <TableColumn fx:id="colStock" prefWidth="75.0" text="Stock" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
